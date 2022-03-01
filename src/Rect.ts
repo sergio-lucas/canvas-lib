@@ -81,7 +81,7 @@ export default class Rect extends Shape<RectAttrs> {
     if (!this.path) return;
     this.fillOrStroke(ctx, this.path);
   }
-  renderHit(ctx: OffscreenCanvasRenderingContext2D) {
+  renderHit(ctx: CanvasRenderingContext2D) {
     ctx.fillStyle = this.color
     ctx.globalAlpha = 1
     if (!this.path) return

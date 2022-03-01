@@ -127,7 +127,7 @@ export default class Shape<
   render(ctx: CanvasRenderingContext2D): void {
     raiseError('render method not implemented')
   }
-  renderHit(ctx: OffscreenCanvasRenderingContext2D): void {
+  renderHit(ctx: CanvasRenderingContext2D): void {
     raiseError('renderHit method not implemented')
   }
   protected _getShapeParents() {

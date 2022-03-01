@@ -74,7 +74,7 @@ export default class Group extends Shape {
     })
     ctx.restore()
   }
-  renderHit(ctx: OffscreenCanvasRenderingContext2D) {
+  renderHit(ctx: CanvasRenderingContext2D) {
     const { x, y, transform, ...rest } = this.attrs()
     ctx.save()
     applyShapeTransformToContext(ctx, {
@@ -95,7 +95,7 @@ export default class Group extends Shape {
 }
 
 function applyShapeStyleToContext(
-  ctx: OffscreenCanvasRenderingContext2D | CanvasRenderingContext2D,
+  ctx: CanvasRenderingContext2D | CanvasRenderingContext2D,
   styles: CanvasStyles,
 ) {
   // group内shape的实际样式 = assign(group.attr, shape.attr)
@@ -108,7 +108,7 @@ function applyShapeStyleToContext(
 }
 
 function applyShapeTransformToContext(
-  ctx: OffscreenCanvasRenderingContext2D | CanvasRenderingContext2D,
+  ctx: CanvasRenderingContext2D | CanvasRenderingContext2D,
   matrix: ShapePositionMatrix,
 ) {
   // group内shape的实际样式 = assign(group.attr, shape.attr)

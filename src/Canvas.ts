@@ -45,7 +45,7 @@ export default class Canvas extends EventEmitter {
   pixelRatio: number = pixelRatio
   root: Group = new Group({ x: 0, y: 0 })
   hitCanvas: HitCanvas
-  hitContext: OffscreenCanvasRenderingContext2D
+  hitContext: CanvasRenderingContext2D
   constructor(
     canvas: HTMLCanvasElement,
     options: {

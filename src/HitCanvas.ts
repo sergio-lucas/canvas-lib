@@ -6,7 +6,10 @@ import {
 import Shape from './Shape'
 
 function getOffscreenCanvas(width: number, height: number) {
-  return new OffscreenCanvas(width, height)
+  let canvas = document.createElement("canvas");
+  canvas.width = (width / 1) ^ 0;
+  canvas.height = (height / 1) ^ 0;
+  return canvas;
 }
 
 /**
@@ -17,8 +20,8 @@ function getOffscreenCanvas(width: number, height: number) {
  * @extends {EventEmitter}
  */
 export default class HitCanvas extends EventEmitter {
-  hitContext: OffscreenCanvasRenderingContext2D
-  offscreenCanvas: OffscreenCanvas
+  hitContext: CanvasRenderingContext2D
+  offscreenCanvas: HTMLCanvasElement
   width: number = 300
   height: number = 150
   pixelRatio: number = pixelRatio
@@ -32,7 +35,7 @@ export default class HitCanvas extends EventEmitter {
 
     this.offscreenCanvas = getOffscreenCanvas(this.width, this.height)
     const hitContext = this.offscreenCanvas.getContext('2d')
-    this.hitContext = hitContext as OffscreenCanvasRenderingContext2D
+    this.hitContext = hitContext as CanvasRenderingContext2D
   }
   getImageData(x: number, y: number) {
     return this.hitContext.getImageData(x, y, 1, 1).data.map(Math.round)

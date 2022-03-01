@@ -57,7 +57,7 @@ export default class Text extends Shape<TextAttrs> {
       ctx.fillText(acturalText, x, y)
     }
   }
-  renderHit(ctx: OffscreenCanvasRenderingContext2D) {
+  renderHit(ctx: CanvasRenderingContext2D) {
     const { width, height, x, y } = this.attrs()
     if (!width || !height) return
     ctx.fillStyle = this.color
